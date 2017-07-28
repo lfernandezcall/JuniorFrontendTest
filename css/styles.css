@@ -2,12 +2,12 @@
     font-family: sans-serif;
 }
 body {
-	background-color: #F5F5F5;
+	background-color: rgba(239, 238, 238, 0.92);
 }
 
 #search-container {
 	width: 380px;
-	height: 70px;
+	height: auto;
 	box-shadow: 6px 7px 20px 3px rgba(0, 0, 0, 0.27);
     border-radius: 5px;
     margin: 0 auto;
@@ -17,4 +17,51 @@ body {
 #form-container {
 	text-align: center;
 	padding-top: 24px;
+	width: 100%;
+}
+
+#form-container input {
+	width: 79%;
+	height: 30px;
+}
+
+#form-container button {
+	height: 35px;
+}
+
+#profile-container img {
+	width: 140px;
+	height: auto;
+	padding-top: 15px;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+#profile-container img {
+	display: none;
+}
+
+#profile-name-bio {
+	display: inline-block;
+}
+
+#profile-container ul {
+	list-style-type: none;
+}
+
+#repos-container ul {
+	list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#repos-container ul>li>h5 {
+	border-bottom: 3px solid #000;
+	padding-bottom: 10px;
+}
+
+#repos-container ul>li>h4 {
+	border-bottom: 1px solid #000;
+	padding-bottom: 10px;
+	padding-left: 10px;
 }

@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Hello!</title>
 	<link type="text/css" href="css/styles.css" rel="stylesheet">
+	<script src="https://use.fontawesome.com/70a14eed93.js"></script>
 </head>
 
 <body>
@@ -14,6 +15,9 @@
 				<input type="text" id="search-user" placeholder="Search user...">
 				<button class="search-button" type="button" onclick="getData()">Search</button>
 			</form>
+		</div>
+		<div id="user-error">
+			<p>USER DON¨T EXIST</p>
 		</div>
 		<div id="profile-container">
 			<img id="user-image" src="">
@@ -26,7 +30,7 @@
 			</div>
 		</div>
 		<div id="repos-container">
-			<ul>
+			<ul id="repos-ul">
 <!-- 				<li>
 					<h5>Repositories</h5>
 				<li>

@@ -1,6 +1,7 @@
 var getData = function () {
   var user = document.getElementById('search-user').value
 
+
   var getJSON = function (url, callback) {
     var xhr = new XMLHttpRequest()
     xhr.open('GET', url, true)
@@ -19,9 +20,13 @@ var getData = function () {
   getJSON('https://api.github.com/users/' + user,
         function (err, data) {
           if (err != null) {
-            // alert('Something went wrong: ' + err)
             document.getElementById('user-error').style.display = 'inline-block'
+            document.getElementById('profile-container').style.display = 'none'
+            document.getElementById('repos-container').style.display = 'none'
           } else {
+            document.getElementById('profile-container').style.display = 'inline-block'
+            document.getElementById('repos-container').style.display = 'initial'
+            document.getElementById('user-error').style.display = 'none'
             document.getElementById('user-name').innerHTML = '@' + data.login
             document.getElementById('user-full-name').innerHTML = data.name
             document.getElementById('user-bio').innerHTML = data.bio
@@ -37,13 +42,17 @@ var getData = function () {
         function (err, data) {
           if (err != null) {
             console.log('Something went wrong: ' + err)
+            userRepos = {}
           } else {
             userRepos = data
             document.getElementById('repos-ul').innerHTML = '<li><h5>Repositories</h5></li><ul id="repos-li-child"></ul>'
             for (i = 0; i < userRepos.length; i++) {
-              document.getElementById('repos-li-child').innerHTML += `<li><h4>${userRepos[i].name}</h4><span><i class="fa fa-star" aria-hidden="true">${userRepos[i].stargazers_count}</i><i class="fa fa-code-fork" aria-hidden="true">${userRepos[i].forks_count}</i></span></li>`
+              document.getElementById('repos-li-child').innerHTML += `<li><h4>${userRepos[i].name}</h4><span><i class="fa fa-star" aria-hidden="true"> ${userRepos[i].stargazers_count}</i><i class="fa fa-code-fork" aria-hidden="true"> ${userRepos[i].forks_count}</i></span></li>`
             }
           }
         }
     )
+  
+  document.getElementById('search-form').reset()
+
 }

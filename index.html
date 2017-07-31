@@ -11,18 +11,18 @@
 <body>
 	<div id="search-container">
 		<div id="form-container">
-			<form action="">
+			<form action="" id="search-form">
 				<input type="text" id="search-user" placeholder="Search user...">
 				<button class="search-button" type="button" onclick="getData()">Search</button>
 			</form>
 		</div>
 		<div id="user-error">
-			<p>USER DON¨T EXIST</p>
+			<p>Does not exist</p>
 		</div>
 		<div id="profile-container">
 			<img id="user-image" src="">
 			<div id="profile-name-bio">
-				<ul>
+				<ul id="ul-profile-bio">
 					<li><p id="user-name"></p></li>
 					<li><h2 id="user-full-name"></h2></li>
 					<li><p id="user-bio"></p></li>
@@ -31,15 +31,6 @@
 		</div>
 		<div id="repos-container">
 			<ul id="repos-ul">
-<!-- 				<li>
-					<h5>Repositories</h5>
-				<li>
-					<h4>Repo 1</h4>
-				</li>
-				<li>
-					<h4>Repo 2</h4>
-				</li>
-				</li> -->
 			</ul>
 		</div>
 	</div>

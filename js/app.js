@@ -1,7 +1,6 @@
 var getData = function () {
   var user = document.getElementById('search-user').value
 
-
   var getJSON = function (url, callback) {
     var xhr = new XMLHttpRequest()
     xhr.open('GET', url, true)
@@ -24,6 +23,7 @@ var getData = function () {
             document.getElementById('profile-container').style.display = 'none'
             document.getElementById('repos-container').style.display = 'none'
           } else {
+            // console.log(JSON.stringify(data))
             document.getElementById('profile-container').style.display = 'inline-block'
             document.getElementById('repos-container').style.display = 'initial'
             document.getElementById('user-error').style.display = 'none'
@@ -44,6 +44,7 @@ var getData = function () {
             console.log('Something went wrong: ' + err)
             userRepos = {}
           } else {
+            console.log(JSON.stringify(data[0]))
             userRepos = data
             document.getElementById('repos-ul').innerHTML = '<li><h5>Repositories</h5></li><ul id="repos-li-child"></ul>'
             for (i = 0; i < userRepos.length; i++) {
@@ -52,7 +53,6 @@ var getData = function () {
           }
         }
     )
-  
-  document.getElementById('search-form').reset()
 
+  document.getElementById('search-form').reset()
 }

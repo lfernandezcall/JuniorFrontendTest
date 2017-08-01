@@ -1,4 +1,5 @@
 var getData = function () {
+  
   var user = document.getElementById('search-user').value
 
   var getJSON = function (url, callback) {
@@ -16,6 +17,8 @@ var getData = function () {
     xhr.send()
   }
 
+// GETTING USER INFO-----------------------------
+
   getJSON('https://api.github.com/users/' + user,
         function (err, data) {
           if (err != null) {
@@ -23,7 +26,6 @@ var getData = function () {
             document.getElementById('profile-container').style.display = 'none'
             document.getElementById('repos-container').style.display = 'none'
           } else {
-            // console.log(JSON.stringify(data))
             document.getElementById('profile-container').style.display = 'inline-block'
             document.getElementById('repos-container').style.display = 'initial'
             document.getElementById('user-error').style.display = 'none'
@@ -35,6 +37,8 @@ var getData = function () {
           }
         }
     )
+
+// GETTING USER REPOS-----------------------------
 
   var userRepos = {}
 
